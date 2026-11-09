@@ -65,17 +65,17 @@ export class Language {
     constructor(wordGenerator: WordGenerator, words: Map<string, Category> | undefined) {
         this.wordGenerator = wordGenerator;
         this.categories = {
-            [Category.Animal]: new Array(),
-            [Category.Building]: new Array(),
-            [Category.CelestialBody]: new Array(),
-            [Category.City]: new Array(),
-            [Category.Civ]: new Array(),
-            [Category.Mineral]: new Array(),
-            [Category.Planet]: new Array(),
-            [Category.Plant]: new Array(),
-            [Category.Region]: new Array(),
-            [Category.Religion]: new Array(),
-            [Category.Writing]: new Array()
+            [Category.Animal]: [],
+            [Category.Building]: [],
+            [Category.CelestialBody]: [],
+            [Category.City]: [],
+            [Category.Civ]: [],
+            [Category.Mineral]: [],
+            [Category.Planet]: [],
+            [Category.Plant]: [],
+            [Category.Region]: [],
+            [Category.Religion]: [],
+            [Category.Writing]: []
         }
         if (words) {
             this.words = words;
@@ -100,7 +100,7 @@ export class Language {
 
     private alreadyGenerated(category: Category): boolean {
         let index = SINGLE_IN_RUN.indexOf(category);
-        if (index == -1) {
+        if (index === -1) {
             return false;
         } else if (this.wasGenerated[index]) {
             return true;
@@ -112,10 +112,10 @@ export class Language {
 
     getWord(category: Category, maybeNew: boolean): string {
         let size = this.categories[category].length;
-        if (size == 0) {
+        if (size === 0) {
             return this.newWord(category);
         }
-        if (maybeNew && !SINGLE.includes(category) && !this.alreadyGenerated(category) && randomRange(0, size) == size) {
+        if (maybeNew && !SINGLE.includes(category) && !this.alreadyGenerated(category) && randomRange(0, size) === size) {
             return this.newWord(category);
         } else {
             return pickOne(this.categories[category]);

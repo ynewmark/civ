@@ -32,7 +32,7 @@ function Civ({date}: Props) {
             }
         }, 1000);
         return () => clearInterval(interval);
-    }, [isWin]);
+    }, [isWin, eventManager, languageManager, techManager]);
 
     return <div className="Civ">
         <h3>{languageManager.getLanguage().getWord(Category.Civ, true)}</h3>

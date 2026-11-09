@@ -180,7 +180,7 @@ class Tree {
     }
 
     public getLeaves(): string[] {
-        return [...this.succs.keys()].filter((name) => this.succs.get(name)?.size == 0);
+        return [...this.succs.keys()].filter((name) => this.succs.get(name)?.size === 0);
     }
 }
 

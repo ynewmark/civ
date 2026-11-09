@@ -19,7 +19,7 @@ function Footer({date, availableTechs, isWin, selectTech}: Props) {
             <React.Fragment key={index}>
                 <button type="button" className="link-button" onClick={(e) => {setNextDate(date + 20); selectTech(tech); return false;}}>{tech}</button>
                 {index < availableTechs.length - 1 ? ", " : ""}
-                {index == availableTechs.length - 2 ? " or " : ""}
+                {index === availableTechs.length - 2 ? " or " : ""}
             </React.Fragment>
         ))}.
     </> : <>You must wait to choose a new tech until stardate {nextDate}.</>
