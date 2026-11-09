@@ -14,6 +14,7 @@ function App() {
 
   return (
     <div className='App'>
+      <title>Civ Game</title>
       <header>
         <h3>Stardate {date}</h3>
       </header>
