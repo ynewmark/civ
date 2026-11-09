@@ -1,5 +1,29 @@
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  background-color: black;
+  color: white;
+}
+
 .App {
-  text-align: center;
+  margin-top: 100px;
+}
+
+.Civ {
+  margin-left: 10px;
+  max-width: 500px;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  font: inherit;
 }
 
 .App-logo {

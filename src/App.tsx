@@ -1,24 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Civ from './Civ';
 
 function App() {
+  const [date, setDate] = useState(3456);
+  useEffect(() => {
+      const interval = setInterval(() => {
+        setDate((prev) => prev + 1);
+      }, 1000);
+      return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header>
+        <h3>Stardate {date}</h3>
       </header>
+      <Civ date={date}></Civ>
     </div>
   );
 }
