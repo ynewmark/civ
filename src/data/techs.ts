@@ -76,7 +76,7 @@ const TECHS: Record<string, Tech> = {
     },
     "plumbing": {
         prereqs: ["construction", "metalworking"],
-        eventChanges: {"plague": -0.03},
+        eventChanges: {"plague": -0.003},
         message: genTemplate`${TEMPLATES.PEOPLE} have ${TEMPLATES.DISCOVERED} ${["build", "construct"]} pipes to remove waste and maintain cleanliness`
     },
     "mill-power": {
@@ -116,7 +116,7 @@ const TECHS: Record<string, Tech> = {
     },
     "germ-theory": {
         prereqs: ["taxonomy", "plumbing"],
-        eventChanges: {"plague": -0.04},
+        eventChanges: {"plague": -0.004},
         message: genTemplate`${TEMPLATES.PEOPLE} begin to accept the initially controversial idea that disease is caused by microorganisms, this allows for the adopation of new methods to treat and prevent disease`
     },
     "radio": {
